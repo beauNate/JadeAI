@@ -9,7 +9,7 @@ import type {
   CustomContent,
   GitHubContent,
 } from '@/types/resume';
-import { esc, getPersonalInfo, visibleSections, type ResumeWithSections, type Section } from '../utils';
+import { esc, getPersonalInfo, visibleSections, buildQrCodesHtml, type ResumeWithSections, type Section } from '../utils';
 
 const SLATE_500 = '#64748b';
 const SLATE_400 = '#94a3b8';
@@ -80,6 +80,8 @@ function buildNordicSectionContent(section: Section, lang: string): string {
       ${it.description ? `<p class="mt-0.5 text-sm font-light" style="color:${SLATE_500}">${esc(it.description)}</p>` : ''}
     </div>`).join('')}</div>`;
   }
+
+  if (section.type === 'qr_codes') return buildQrCodesHtml(section);
 
   // Generic items fallback
   if (c.items) {

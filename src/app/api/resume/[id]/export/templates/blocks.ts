@@ -9,7 +9,7 @@ import type {
   CustomContent,
   GitHubContent,
 } from '@/types/resume';
-import { esc, getPersonalInfo, visibleSections, buildHighlights, type ResumeWithSections, type Section } from '../utils';
+import { esc, getPersonalInfo, visibleSections, buildHighlights, buildQrCodesHtml, type ResumeWithSections, type Section } from '../utils';
 
 const PRIMARY = '#37352f';
 const ACCENT = '#2383e2';
@@ -84,6 +84,8 @@ function buildBlocksSectionContent(section: Section, lang: string): string {
       ${it.description ? `<p class="mt-1 text-sm" style="color:#787774">${esc(it.description)}</p>` : ''}
     </div>`).join('')}</div>`;
   }
+
+  if (section.type === 'qr_codes') return buildQrCodesHtml(section);
 
   if (c.items) {
     return `<div class="space-y-2">${c.items.map((it: any) => `<div class="rounded-md border px-3 py-2" style="border-color:#e3e2de"><span class="text-sm font-medium" style="color:${PRIMARY}">${esc(it.name || it.title || it.language)}</span>${it.description ? `<p class="text-sm" style="color:#787774">${esc(it.description)}</p>` : ''}</div>`).join('')}</div>`;

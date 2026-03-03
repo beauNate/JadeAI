@@ -9,7 +9,7 @@ import type {
   CustomContent,
   GitHubContent,
 } from '@/types/resume';
-import { esc, getPersonalInfo, visibleSections, buildHighlights, type ResumeWithSections, type Section } from '../utils';
+import { esc, getPersonalInfo, visibleSections, buildHighlights, buildQrCodesHtml, type ResumeWithSections, type Section } from '../utils';
 
 export function buildTwoColumnLeftContent(section: Section): string {
   const c = section.content as any;
@@ -34,6 +34,7 @@ export function buildTwoColumnLeftContent(section: Section): string {
       `<div><p class="text-xs font-semibold text-zinc-200">${esc(it.title)}</p>${it.subtitle ? `<p class="text-[10px] text-zinc-400">${esc(it.subtitle)}</p>` : ''}${it.description ? `<p class="text-[10px] text-zinc-400">${esc(it.description)}</p>` : ''}</div>`
     ).join('')}</div>`;
   }
+  if (section.type === 'qr_codes') return buildQrCodesHtml(section);
   if (c.items) {
     return `<div class="space-y-1.5">${c.items.map((it: any) => `<div><span class="text-xs font-medium text-zinc-200">${esc(it.name || it.title || it.language)}</span>${it.description ? `<p class="text-[10px] text-zinc-400">${esc(it.description)}</p>` : ''}</div>`).join('')}</div>`;
   }
@@ -91,6 +92,7 @@ function buildTwoColumnRightContent(section: Section, lang: string): string {
       ${it.description ? `<p class="text-sm text-zinc-600">${esc(it.description)}</p>` : ''}
     </div>`).join('')}</div>`;
   }
+  if (section.type === 'qr_codes') return buildQrCodesHtml(section);
   if (c.items) {
     return `<div class="space-y-2">${c.items.map((it: any) => `<div><span class="text-sm font-medium text-zinc-700">${esc(it.name || it.title || it.language)}</span>${it.description ? `<p class="text-sm text-zinc-600">${esc(it.description)}</p>` : ''}</div>`).join('')}</div>`;
   }

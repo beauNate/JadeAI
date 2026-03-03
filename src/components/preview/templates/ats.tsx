@@ -15,6 +15,7 @@ import type {
 } from '@/types/resume';
 import { AvatarImage } from '../avatar-image';
 import { isSectionEmpty } from '../utils';
+import { QrCodesPreview } from '../qr-codes-preview';
 
 export function AtsTemplate({ resume }: { resume: Resume }) {
   const personalInfo = resume.sections.find((s) => s.type === 'personal_info');
@@ -235,6 +236,10 @@ function AtsSectionContent({ section, resume }: { section: any; resume: Resume }
         ))}
       </div>
     );
+  }
+
+  if (section.type === 'qr_codes') {
+    return <QrCodesPreview items={(content as any).items || []} />;
   }
 
   // Generic fallback

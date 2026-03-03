@@ -15,6 +15,7 @@ import type {
 } from '@/types/resume';
 import { AvatarImage } from '../avatar-image';
 import { isSectionEmpty } from '../utils';
+import { QrCodesPreview } from '../qr-codes-preview';
 
 // Left sidebar section types
 const LEFT_TYPES = new Set(['skills', 'languages', 'certifications', 'custom']);
@@ -178,6 +179,10 @@ function LeftSectionContent({ section }: { section: any }) {
         ))}
       </div>
     );
+  }
+
+  if (section.type === 'qr_codes') {
+    return <QrCodesPreview items={(content as any).items || []} />;
   }
 
   // Generic fallback
@@ -368,6 +373,10 @@ function RightSectionContent({ section, resume }: { section: any; resume: Resume
         ))}
       </div>
     );
+  }
+
+  if (section.type === 'qr_codes') {
+    return <QrCodesPreview items={(content as any).items || []} />;
   }
 
   // Generic fallback

@@ -15,6 +15,7 @@ import type {
 } from '@/types/resume';
 import { AvatarImage } from '../avatar-image';
 import { isSectionEmpty } from '../utils';
+import { QrCodesPreview } from '../qr-codes-preview';
 
 const SIDEBAR_BG = '#1e40af';
 const ACCENT = '#3b82f6';
@@ -181,6 +182,10 @@ function SidebarSectionContent({ section }: { section: any }) {
         ))}
       </div>
     );
+  }
+
+  if (section.type === 'qr_codes') {
+    return <QrCodesPreview items={(content as any).items || []} />;
   }
 
   // Generic fallback
@@ -385,6 +390,10 @@ function MainSectionContent({ section, resume }: { section: any; resume: Resume 
         ))}
       </div>
     );
+  }
+
+  if (section.type === 'qr_codes') {
+    return <QrCodesPreview items={(content as any).items || []} />;
   }
 
   // Generic fallback

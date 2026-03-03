@@ -9,7 +9,7 @@ import type {
   CustomContent,
   GitHubContent,
 } from '@/types/resume';
-import { esc, getPersonalInfo, visibleSections, buildHighlights, type ResumeWithSections, type Section } from '../utils';
+import { esc, getPersonalInfo, visibleSections, buildHighlights, buildQrCodesHtml, type ResumeWithSections, type Section } from '../utils';
 
 function buildCompactRightContent(section: Section, lang: string): string {
   const c = section.content as any;
@@ -44,6 +44,7 @@ function buildCompactRightContent(section: Section, lang: string): string {
       ${it.description ? `<p class="mt-0.5 text-xs text-zinc-600">${esc(it.description)}</p>` : ''}
     </div>`).join('')}</div>`;
   }
+  if (section.type === 'qr_codes') return buildQrCodesHtml(section);
   if (c.items) {
     return `<div class="space-y-1.5">${c.items.map((it: any) => `<div>
       <span class="text-xs font-medium text-zinc-700">${esc(it.name || it.title || it.language)}</span>
@@ -78,6 +79,7 @@ function buildCompactLeftContent(section: Section): string {
       ${it.description ? `<p class="text-[9px] text-zinc-400">${esc(it.description)}</p>` : ''}
     </div>`).join('')}</div>`;
   }
+  if (section.type === 'qr_codes') return buildQrCodesHtml(section);
   if (c.items) {
     return `<div class="space-y-1">${c.items.map((it: any) => `<div>
       <span class="text-[10px] font-medium text-zinc-700">${esc(it.name || it.title || it.language)}</span>

@@ -3,6 +3,7 @@
 import type { Resume, PersonalInfoContent, SummaryContent, WorkExperienceContent, EducationContent, SkillsContent, ProjectsContent, CertificationsContent, LanguagesContent, GitHubContent, CustomContent } from '@/types/resume';
 import { AvatarImage } from '../avatar-image';
 import { isSectionEmpty } from '../utils';
+import { QrCodesPreview } from '../qr-codes-preview';
 
 const PRIMARY = '#9a3412';
 const ACCENT = '#ea580c';
@@ -268,6 +269,10 @@ function TeacherSectionContent({ section, resume }: { section: any; resume: Resu
         ))}
       </div>
     );
+  }
+
+  if (section.type === 'qr_codes') {
+    return <QrCodesPreview items={(content as any).items || []} />;
   }
 
   // Generic items fallback

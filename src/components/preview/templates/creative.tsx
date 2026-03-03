@@ -15,6 +15,7 @@ import type {
 } from '@/types/resume';
 import { AvatarImage } from '../avatar-image';
 import { isSectionEmpty } from '../utils';
+import { QrCodesPreview } from '../qr-codes-preview';
 
 const GRADIENT = 'linear-gradient(135deg, #7c3aed 0%, #f97316 100%)';
 const PRIMARY = '#7c3aed';
@@ -291,6 +292,10 @@ function CreativeSectionContent({ section, resume }: { section: any; resume: Res
         ))}
       </div>
     );
+  }
+
+  if (section.type === 'qr_codes') {
+    return <QrCodesPreview items={(content as any).items || []} />;
   }
 
   // Generic fallback

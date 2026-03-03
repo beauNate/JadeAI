@@ -9,7 +9,7 @@ import type {
   CustomContent,
   GitHubContent,
 } from '@/types/resume';
-import { esc, getPersonalInfo, visibleSections, buildHighlights, type ResumeWithSections, type Section } from '../utils';
+import { esc, getPersonalInfo, visibleSections, buildHighlights, buildQrCodesHtml, type ResumeWithSections, type Section } from '../utils';
 
 const SIDEBAR_BG = '#1e40af';
 const ACCENT = '#3b82f6';
@@ -40,6 +40,7 @@ function buildSidebarSectionContent(section: Section): string {
       `<div><p class="text-xs font-semibold text-blue-100">${esc(it.title)}</p>${it.subtitle ? `<p class="text-[10px] text-blue-300">${esc(it.subtitle)}</p>` : ''}${it.description ? `<p class="text-[10px] text-blue-300">${esc(it.description)}</p>` : ''}</div>`
     ).join('')}</div>`;
   }
+  if (section.type === 'qr_codes') return buildQrCodesHtml(section);
   if (c.items) {
     return `<div class="space-y-1.5">${c.items.map((it: any) => `<div><span class="text-xs font-medium text-blue-100">${esc(it.name || it.title || it.language)}</span>${it.description ? `<p class="text-[10px] text-blue-300">${esc(it.description)}</p>` : ''}</div>`).join('')}</div>`;
   }
@@ -102,6 +103,7 @@ function buildSidebarMainContent(section: Section, lang: string = 'en'): string 
       ${it.description ? `<p class="text-sm text-zinc-600">${esc(it.description)}</p>` : ''}
     </div>`).join('')}</div>`;
   }
+  if (section.type === 'qr_codes') return buildQrCodesHtml(section);
   if (c.items) {
     return `<div class="space-y-2">${c.items.map((it: any) => `<div><span class="text-sm font-medium text-zinc-700">${esc(it.name || it.title || it.language)}</span>${it.description ? `<p class="text-sm text-zinc-600">${esc(it.description)}</p>` : ''}</div>`).join('')}</div>`;
   }

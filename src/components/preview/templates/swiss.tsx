@@ -15,6 +15,7 @@ import type {
 } from '@/types/resume';
 import { AvatarImage } from '../avatar-image';
 import { isSectionEmpty } from '../utils';
+import { QrCodesPreview } from '../qr-codes-preview';
 
 const RED = '#dc2626';
 const TEXT = '#18181b';
@@ -234,6 +235,10 @@ function SwissSectionContent({ section, lang }: { section: any; lang?: string })
         ))}
       </div>
     );
+  }
+
+  if (section.type === 'qr_codes') {
+    return <QrCodesPreview items={(content as any).items || []} />;
   }
 
   // Generic items fallback

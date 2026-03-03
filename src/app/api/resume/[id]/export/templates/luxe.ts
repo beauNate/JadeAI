@@ -9,7 +9,7 @@ import type {
   CustomContent,
   GitHubContent,
 } from '@/types/resume';
-import { esc, getPersonalInfo, visibleSections, type ResumeWithSections, type Section } from '../utils';
+import { esc, getPersonalInfo, visibleSections, buildQrCodesHtml, type ResumeWithSections, type Section } from '../utils';
 
 const GOLD = '#d4af37';
 const TEXT = '#000000';
@@ -81,6 +81,8 @@ function buildLuxeSectionContent(section: Section, lang: string): string {
       ${it.description ? `<p class="mt-0.5 text-sm" style="color:#44403c">${esc(it.description)}</p>` : ''}
     </div>`).join('')}</div>`;
   }
+
+  if (section.type === 'qr_codes') return buildQrCodesHtml(section);
 
   if (c.items) {
     return `<div class="space-y-2">${c.items.map((it: any) => `<div><span class="text-sm font-bold" style="color:${TEXT}">${esc(it.name || it.title || it.language)}</span>${it.description ? `<p class="text-sm" style="color:#44403c">${esc(it.description)}</p>` : ''}</div>`).join('')}</div>`;

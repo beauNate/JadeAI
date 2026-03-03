@@ -9,7 +9,7 @@ import type {
   CustomContent,
   GitHubContent,
 } from '@/types/resume';
-import { esc, getPersonalInfo, visibleSections, type ResumeWithSections, type Section } from '../utils';
+import { esc, getPersonalInfo, visibleSections, buildQrCodesHtml, type ResumeWithSections, type Section } from '../utils';
 
 const DARK = '#0d1117';
 const BLUE = '#58a6ff';
@@ -49,6 +49,8 @@ function buildCoderSidebarContent(section: Section): string {
       ${it.issuer || it.date ? `<p class="text-[9px]" style="color:#484f58">${it.issuer ? esc(it.issuer) : ''}${it.date ? ` (${esc(it.date)})` : ''}</p>` : ''}
     </div>`).join('')}</div>`;
   }
+
+  if (section.type === 'qr_codes') return buildQrCodesHtml(section);
 
   if (c.items) {
     return `<div class="space-y-1.5">${c.items.map((it: any) => `<div><span class="text-[10px] font-medium" style="color:#c9d1d9">${esc(it.name || it.title || it.language)}</span>${it.description ? `<p class="text-[9px]" style="color:#484f58">${esc(it.description)}</p>` : ''}</div>`).join('')}</div>`;
@@ -123,6 +125,8 @@ function buildCoderMainContent(section: Section, lang: string): string {
       `<span class="text-sm"><span class="font-medium" style="color:${DARK}">${esc(it.language)}</span><span class="text-zinc-500"> - ${esc(it.proficiency)}</span></span>`
     ).join('')}</div>`;
   }
+
+  if (section.type === 'qr_codes') return buildQrCodesHtml(section);
 
   if (c.items) {
     return `<div class="space-y-2">${c.items.map((it: any) => `<div><span class="text-sm font-medium" style="color:${DARK}">${esc(it.name || it.title || it.language)}</span>${it.description ? `<p class="text-sm text-zinc-600">${esc(it.description)}</p>` : ''}</div>`).join('')}</div>`;
