@@ -54,6 +54,54 @@ export function SidebarTemplate({ resume }: { resume: Resume }) {
 
         {/* Contact Info */}
         <div className="mb-6 space-y-1.5 text-xs">
+          {pi.age && (
+            <div className="flex items-start gap-2 text-blue-100">
+              <span className="shrink-0 text-blue-300">Age:</span>
+              <span>{pi.age}</span>
+            </div>
+          )}
+          {pi.politicalStatus && (
+            <div className="flex items-start gap-2 text-blue-100">
+              <span className="shrink-0 text-blue-300">Political:</span>
+              <span>{pi.politicalStatus}</span>
+            </div>
+          )}
+          {pi.gender && (
+            <div className="flex items-start gap-2 text-blue-100">
+              <span className="shrink-0 text-blue-300">Gender:</span>
+              <span>{pi.gender}</span>
+            </div>
+          )}
+          {pi.ethnicity && (
+            <div className="flex items-start gap-2 text-blue-100">
+              <span className="shrink-0 text-blue-300">Ethnicity:</span>
+              <span>{pi.ethnicity}</span>
+            </div>
+          )}
+          {pi.hometown && (
+            <div className="flex items-start gap-2 text-blue-100">
+              <span className="shrink-0 text-blue-300">Hometown:</span>
+              <span>{pi.hometown}</span>
+            </div>
+          )}
+          {pi.maritalStatus && (
+            <div className="flex items-start gap-2 text-blue-100">
+              <span className="shrink-0 text-blue-300">Marital:</span>
+              <span>{pi.maritalStatus}</span>
+            </div>
+          )}
+          {pi.yearsOfExperience && (
+            <div className="flex items-start gap-2 text-blue-100">
+              <span className="shrink-0 text-blue-300">Experience:</span>
+              <span>{pi.yearsOfExperience}</span>
+            </div>
+          )}
+          {pi.educationLevel && (
+            <div className="flex items-start gap-2 text-blue-100">
+              <span className="shrink-0 text-blue-300">Education:</span>
+              <span>{pi.educationLevel}</span>
+            </div>
+          )}
           {pi.email && (
             <div className="flex items-start gap-2 text-blue-100">
               <span className="shrink-0 text-blue-300">Email:</span>
@@ -64,6 +112,12 @@ export function SidebarTemplate({ resume }: { resume: Resume }) {
             <div className="flex items-start gap-2 text-blue-100">
               <span className="shrink-0 text-blue-300">Phone:</span>
               <span>{pi.phone}</span>
+            </div>
+          )}
+          {pi.wechat && (
+            <div className="flex items-start gap-2 text-blue-100">
+              <span className="shrink-0 text-blue-300">WeChat:</span>
+              <span>{pi.wechat}</span>
             </div>
           )}
           {pi.location && (

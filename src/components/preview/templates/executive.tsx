@@ -24,8 +24,17 @@ export function ExecutiveTemplate({ resume }: { resume: Resume }) {
             <h1 className="text-3xl font-bold tracking-tight text-white">{pi.fullName || 'Your Name'}</h1>
             {pi.jobTitle && <p className="mt-1 text-base font-light" style={{ color: EMERALD }}>{pi.jobTitle}</p>}
             <div className="mt-2 flex flex-wrap gap-3 text-sm text-zinc-400">
+              {pi.age && <span>{pi.age}</span>}
+              {pi.politicalStatus && <span>{pi.politicalStatus}</span>}
+              {pi.gender && <span>{pi.gender}</span>}
+              {pi.ethnicity && <span>{pi.ethnicity}</span>}
+              {pi.hometown && <span>{pi.hometown}</span>}
+              {pi.maritalStatus && <span>{pi.maritalStatus}</span>}
+              {pi.yearsOfExperience && <span>{pi.yearsOfExperience}</span>}
+              {pi.educationLevel && <span>{pi.educationLevel}</span>}
               {pi.email && <span>{pi.email}</span>}
               {pi.phone && <span>{pi.phone}</span>}
+              {pi.wechat && <span>{pi.wechat}</span>}
               {pi.location && <span>{pi.location}</span>}
               {pi.website && <span>{pi.website}</span>}
             </div>

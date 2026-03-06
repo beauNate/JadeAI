@@ -44,8 +44,17 @@ export function RoseTemplate({ resume }: { resume: Resume }) {
           <span className="h-1 w-1 rounded-full" style={{ backgroundColor: ACCENT, opacity: 0.4 }} />
         </div>
         <div className="mt-3 flex flex-wrap items-center justify-center gap-3 text-xs" style={{ color: ACCENT }}>
+          {pi.age && <span>{pi.age}</span>}
+          {pi.politicalStatus && <span>{pi.politicalStatus}</span>}
+          {pi.gender && <span>{pi.gender}</span>}
+          {pi.ethnicity && <span>{pi.ethnicity}</span>}
+          {pi.hometown && <span>{pi.hometown}</span>}
+          {pi.maritalStatus && <span>{pi.maritalStatus}</span>}
+          {pi.yearsOfExperience && <span>{pi.yearsOfExperience}</span>}
+          {pi.educationLevel && <span>{pi.educationLevel}</span>}
           {pi.email && <span>{pi.email}</span>}
           {pi.phone && <span>{pi.phone}</span>}
+          {pi.wechat && <span>{pi.wechat}</span>}
           {pi.location && <span>{pi.location}</span>}
           {pi.website && <span>{pi.website}</span>}
         </div>

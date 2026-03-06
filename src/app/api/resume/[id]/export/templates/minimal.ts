@@ -87,8 +87,17 @@ export function buildMinimalHtml(resume: ResumeWithSections): string {
           <h1 class="text-xl font-medium text-zinc-900">${esc(pi.fullName || 'Your Name')}</h1>
           <div class="mt-1 flex flex-wrap gap-3 text-sm text-zinc-500">
             ${pi.jobTitle ? `<span>${esc(pi.jobTitle)}</span>` : ''}
+            ${pi.age ? `<span>${esc(pi.age)}</span>` : ''}
+            ${pi.gender ? `<span>${esc(pi.gender)}</span>` : ''}
+            ${pi.politicalStatus ? `<span>${esc(pi.politicalStatus)}</span>` : ''}
+            ${pi.ethnicity ? `<span>${esc(pi.ethnicity)}</span>` : ''}
+            ${pi.hometown ? `<span>${esc(pi.hometown)}</span>` : ''}
+            ${pi.maritalStatus ? `<span>${esc(pi.maritalStatus)}</span>` : ''}
+            ${pi.yearsOfExperience ? `<span>${esc(pi.yearsOfExperience)}</span>` : ''}
+            ${pi.educationLevel ? `<span>${esc(pi.educationLevel)}</span>` : ''}
             ${pi.email ? `<span>${esc(pi.email)}</span>` : ''}
             ${pi.phone ? `<span>${esc(pi.phone)}</span>` : ''}
+            ${pi.wechat ? `<span>${esc(pi.wechat)}</span>` : ''}
             ${pi.location ? `<span>${esc(pi.location)}</span>` : ''}
           </div>
         </div>

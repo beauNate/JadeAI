@@ -80,7 +80,7 @@ function buildInfographicSectionContent(section: Section, color: string, colorIn
 export function buildInfographicHtml(resume: ResumeWithSections): string {
   const pi = getPersonalInfo(resume);
   const sections = visibleSections(resume);
-  const contacts = [pi.email, pi.phone, pi.location, pi.website].filter(Boolean);
+  const contacts = [pi.age, pi.gender, pi.politicalStatus, pi.ethnicity, pi.hometown, pi.maritalStatus, pi.yearsOfExperience, pi.educationLevel, pi.email, pi.phone, pi.wechat, pi.location, pi.website].filter(Boolean);
   const COLORS = ['#3b82f6', '#ef4444', '#f59e0b', '#10b981', '#8b5cf6', '#ec4899'];
 
   return `<div class="mx-auto max-w-[210mm] bg-white shadow-lg" style="font-family:Inter,sans-serif">

@@ -93,7 +93,7 @@ function buildBoldSectionContent(s: Section, lang: string): string {
 export function buildBoldHtml(resume: ResumeWithSections): string {
   const pi = getPersonalInfo(resume);
   const sections = visibleSections(resume);
-  const contacts = [pi.email, pi.phone, pi.location, pi.website].filter(Boolean);
+  const contacts = [pi.age, pi.gender, pi.politicalStatus, pi.ethnicity, pi.hometown, pi.maritalStatus, pi.yearsOfExperience, pi.educationLevel, pi.email, pi.phone, pi.wechat, pi.location, pi.website].filter(Boolean);
 
   return `<div class="mx-auto max-w-[210mm] bg-white shadow-lg" style="font-family:Inter,sans-serif">
     <div class="bg-black px-8 py-8 text-white">

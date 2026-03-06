@@ -100,8 +100,17 @@ export function buildEuroHtml(resume: ResumeWithSections): string {
         <h1 class="text-3xl font-bold" style="color:${BL}">${esc(pi.fullName || 'Your Name')}</h1>
         ${pi.jobTitle ? `<p class="mt-1 text-base text-zinc-500">${esc(pi.jobTitle)}</p>` : ''}
         <div class="mt-3 space-y-0.5 text-sm text-zinc-600">
+          ${pi.age ? `<div><span class="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Age</span>${esc(pi.age)}</div>` : ''}
+          ${pi.gender ? `<div><span class="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Gender</span>${esc(pi.gender)}</div>` : ''}
+          ${pi.politicalStatus ? `<div><span class="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Political</span>${esc(pi.politicalStatus)}</div>` : ''}
+          ${pi.ethnicity ? `<div><span class="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Ethnicity</span>${esc(pi.ethnicity)}</div>` : ''}
+          ${pi.hometown ? `<div><span class="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Hometown</span>${esc(pi.hometown)}</div>` : ''}
+          ${pi.maritalStatus ? `<div><span class="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Marital</span>${esc(pi.maritalStatus)}</div>` : ''}
+          ${pi.yearsOfExperience ? `<div><span class="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Exp.</span>${esc(pi.yearsOfExperience)}</div>` : ''}
+          ${pi.educationLevel ? `<div><span class="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Edu.</span>${esc(pi.educationLevel)}</div>` : ''}
           ${pi.email ? `<div><span class="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Email</span>${esc(pi.email)}</div>` : ''}
           ${pi.phone ? `<div><span class="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Phone</span>${esc(pi.phone)}</div>` : ''}
+          ${pi.wechat ? `<div><span class="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">WeChat</span>${esc(pi.wechat)}</div>` : ''}
           ${pi.location ? `<div><span class="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Address</span>${esc(pi.location)}</div>` : ''}
           ${pi.website ? `<div><span class="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Website</span>${esc(pi.website)}</div>` : ''}
         </div>

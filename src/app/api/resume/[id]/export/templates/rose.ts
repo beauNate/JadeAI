@@ -98,7 +98,7 @@ function buildRoseSectionContent(section: Section, lang: string = 'en'): string 
 export function buildRoseHtml(resume: ResumeWithSections): string {
   const pi = getPersonalInfo(resume);
   const sections = visibleSections(resume);
-  const contacts = [pi.email, pi.phone, pi.location, pi.website].filter(Boolean);
+  const contacts = [pi.age, pi.gender, pi.politicalStatus, pi.ethnicity, pi.hometown, pi.maritalStatus, pi.yearsOfExperience, pi.educationLevel, pi.email, pi.phone, pi.wechat, pi.location, pi.website].filter(Boolean);
 
   return `<div class="mx-auto max-w-[210mm] bg-white shadow-lg" style="font-family:Inter,sans-serif">
     <div class="mb-8 rounded-2xl px-8 py-6 text-center" style="background-color:${ROSE_50}">

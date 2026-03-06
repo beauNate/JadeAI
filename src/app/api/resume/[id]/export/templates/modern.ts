@@ -79,7 +79,7 @@ function buildModernSectionContent(section: Section, lang: string = 'en'): strin
 export function buildModernHtml(resume: ResumeWithSections): string {
   const pi = getPersonalInfo(resume);
   const sections = visibleSections(resume);
-  const contacts = [pi.email, pi.phone, pi.location, pi.website].filter(Boolean);
+  const contacts = [pi.age, pi.gender, pi.politicalStatus, pi.ethnicity, pi.hometown, pi.maritalStatus, pi.yearsOfExperience, pi.educationLevel, pi.email, pi.phone, pi.wechat, pi.location, pi.website].filter(Boolean);
 
   return `<div class="mx-auto max-w-[210mm] overflow-hidden bg-white shadow-lg" style="font-family:Inter,sans-serif">
     <div class="relative px-10 py-8 text-white" style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)">

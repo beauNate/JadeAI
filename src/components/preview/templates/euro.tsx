@@ -19,8 +19,17 @@ export function EuroTemplate({ resume }: { resume: Resume }) {
           <h1 className="text-3xl font-bold" style={{ color: BLUE }}>{pi.fullName || 'Your Name'}</h1>
           {pi.jobTitle && <p className="mt-1 text-base text-zinc-500">{pi.jobTitle}</p>}
           <div className="mt-3 space-y-0.5 text-sm text-zinc-600">
+            {pi.age && <div><span className="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Age</span>{pi.age}</div>}
+            {pi.politicalStatus && <div><span className="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Political</span>{pi.politicalStatus}</div>}
+            {pi.gender && <div><span className="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Gender</span>{pi.gender}</div>}
+            {pi.ethnicity && <div><span className="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Ethnicity</span>{pi.ethnicity}</div>}
+            {pi.hometown && <div><span className="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Hometown</span>{pi.hometown}</div>}
+            {pi.maritalStatus && <div><span className="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Marital</span>{pi.maritalStatus}</div>}
+            {pi.yearsOfExperience && <div><span className="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Experience</span>{pi.yearsOfExperience}</div>}
+            {pi.educationLevel && <div><span className="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Education</span>{pi.educationLevel}</div>}
             {pi.email && <div><span className="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Email</span>{pi.email}</div>}
             {pi.phone && <div><span className="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Phone</span>{pi.phone}</div>}
+            {pi.wechat && <div><span className="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">WeChat</span>{pi.wechat}</div>}
             {pi.location && <div><span className="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Address</span>{pi.location}</div>}
             {pi.website && <div><span className="inline-block w-20 text-xs font-semibold uppercase text-zinc-400">Website</span>{pi.website}</div>}
           </div>

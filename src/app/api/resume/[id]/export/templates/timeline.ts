@@ -94,7 +94,7 @@ function buildTimelineSectionContent(s: Section, lang: string): string {
 export function buildTimelineHtml(resume: ResumeWithSections): string {
   const pi = getPersonalInfo(resume);
   const sections = visibleSections(resume);
-  const contacts = [pi.email, pi.phone, pi.location, pi.website].filter(Boolean);
+  const contacts = [pi.age, pi.gender, pi.politicalStatus, pi.ethnicity, pi.hometown, pi.maritalStatus, pi.yearsOfExperience, pi.educationLevel, pi.email, pi.phone, pi.wechat, pi.location, pi.website].filter(Boolean);
   const BG = '#475569';
   const AC = '#3b82f6';
 

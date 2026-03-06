@@ -115,8 +115,17 @@ export function buildTwoColumnHtml(resume: ResumeWithSections): string {
         ${pi.jobTitle ? `<p class="mt-1 text-sm font-light text-zinc-300">${esc(pi.jobTitle)}</p>` : ''}
       </div>
       <div class="mb-6 space-y-1.5 text-xs">
+        ${pi.age ? `<div class="flex items-start gap-2 text-zinc-300"><span class="shrink-0 text-zinc-400">Age:</span><span>${esc(pi.age)}</span></div>` : ''}
+        ${pi.gender ? `<div class="flex items-start gap-2 text-zinc-300"><span class="shrink-0 text-zinc-400">Gender:</span><span>${esc(pi.gender)}</span></div>` : ''}
+        ${pi.politicalStatus ? `<div class="flex items-start gap-2 text-zinc-300"><span class="shrink-0 text-zinc-400">Political:</span><span>${esc(pi.politicalStatus)}</span></div>` : ''}
+        ${pi.ethnicity ? `<div class="flex items-start gap-2 text-zinc-300"><span class="shrink-0 text-zinc-400">Ethnicity:</span><span>${esc(pi.ethnicity)}</span></div>` : ''}
+        ${pi.hometown ? `<div class="flex items-start gap-2 text-zinc-300"><span class="shrink-0 text-zinc-400">Hometown:</span><span>${esc(pi.hometown)}</span></div>` : ''}
+        ${pi.maritalStatus ? `<div class="flex items-start gap-2 text-zinc-300"><span class="shrink-0 text-zinc-400">Marital:</span><span>${esc(pi.maritalStatus)}</span></div>` : ''}
+        ${pi.yearsOfExperience ? `<div class="flex items-start gap-2 text-zinc-300"><span class="shrink-0 text-zinc-400">Experience:</span><span>${esc(pi.yearsOfExperience)}</span></div>` : ''}
+        ${pi.educationLevel ? `<div class="flex items-start gap-2 text-zinc-300"><span class="shrink-0 text-zinc-400">Education:</span><span>${esc(pi.educationLevel)}</span></div>` : ''}
         ${pi.email ? `<div class="flex items-start gap-2 text-zinc-300"><span class="shrink-0 text-zinc-400">Email:</span><span class="break-all">${esc(pi.email)}</span></div>` : ''}
         ${pi.phone ? `<div class="flex items-start gap-2 text-zinc-300"><span class="shrink-0 text-zinc-400">Phone:</span><span>${esc(pi.phone)}</span></div>` : ''}
+        ${pi.wechat ? `<div class="flex items-start gap-2 text-zinc-300"><span class="shrink-0 text-zinc-400">WeChat:</span><span>${esc(pi.wechat)}</span></div>` : ''}
         ${pi.location ? `<div class="flex items-start gap-2 text-zinc-300"><span class="shrink-0 text-zinc-400">Location:</span><span>${esc(pi.location)}</span></div>` : ''}
         ${pi.website ? `<div class="flex items-start gap-2 text-zinc-300"><span class="shrink-0 text-zinc-400">Web:</span><span class="break-all">${esc(pi.website)}</span></div>` : ''}
         ${pi.linkedin ? `<div class="flex items-start gap-2 text-zinc-300"><span class="shrink-0 text-zinc-400">LinkedIn:</span><span class="break-all">${esc(pi.linkedin)}</span></div>` : ''}

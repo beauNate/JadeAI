@@ -21,8 +21,17 @@ export function MinimalTemplate({ resume }: { resume: Resume }) {
             <h1 className="text-xl font-medium text-zinc-900">{pi.fullName || 'Your Name'}</h1>
             <div className="mt-1 flex flex-wrap gap-3 text-sm text-zinc-500">
               {pi.jobTitle && <span>{pi.jobTitle}</span>}
+              {pi.age && <span>{pi.age}</span>}
+              {pi.politicalStatus && <span>{pi.politicalStatus}</span>}
+              {pi.gender && <span>{pi.gender}</span>}
+              {pi.ethnicity && <span>{pi.ethnicity}</span>}
+              {pi.hometown && <span>{pi.hometown}</span>}
+              {pi.maritalStatus && <span>{pi.maritalStatus}</span>}
+              {pi.yearsOfExperience && <span>{pi.yearsOfExperience}</span>}
+              {pi.educationLevel && <span>{pi.educationLevel}</span>}
               {pi.email && <span>{pi.email}</span>}
               {pi.phone && <span>{pi.phone}</span>}
+              {pi.wechat && <span>{pi.wechat}</span>}
               {pi.location && <span>{pi.location}</span>}
             </div>
           </div>

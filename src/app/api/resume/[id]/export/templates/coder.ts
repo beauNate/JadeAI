@@ -155,8 +155,17 @@ export function buildCoderHtml(resume: ResumeWithSections): string {
         ${pi.jobTitle ? `<p class="mt-0.5 text-xs" style="color:${BLUE}">// ${esc(pi.jobTitle)}</p>` : ''}
       </div>
       <div class="mb-5 space-y-1.5 text-[11px]" style="border-top:1px solid ${BORDER};padding-top:12px">
+        ${pi.age ? `<div class="flex items-start gap-2"><span style="color:${GREEN}">$</span><span style="color:#8b949e">${esc(pi.age)}</span></div>` : ''}
+        ${pi.gender ? `<div class="flex items-start gap-2"><span style="color:${GREEN}">$</span><span style="color:#8b949e">${esc(pi.gender)}</span></div>` : ''}
+        ${pi.politicalStatus ? `<div class="flex items-start gap-2"><span style="color:${GREEN}">$</span><span style="color:#8b949e">${esc(pi.politicalStatus)}</span></div>` : ''}
+        ${pi.ethnicity ? `<div class="flex items-start gap-2"><span style="color:${GREEN}">$</span><span style="color:#8b949e">${esc(pi.ethnicity)}</span></div>` : ''}
+        ${pi.hometown ? `<div class="flex items-start gap-2"><span style="color:${GREEN}">$</span><span style="color:#8b949e">${esc(pi.hometown)}</span></div>` : ''}
+        ${pi.maritalStatus ? `<div class="flex items-start gap-2"><span style="color:${GREEN}">$</span><span style="color:#8b949e">${esc(pi.maritalStatus)}</span></div>` : ''}
+        ${pi.yearsOfExperience ? `<div class="flex items-start gap-2"><span style="color:${GREEN}">$</span><span style="color:#8b949e">${esc(pi.yearsOfExperience)}</span></div>` : ''}
+        ${pi.educationLevel ? `<div class="flex items-start gap-2"><span style="color:${GREEN}">$</span><span style="color:#8b949e">${esc(pi.educationLevel)}</span></div>` : ''}
         ${pi.email ? `<div class="flex items-start gap-2"><span style="color:${GREEN}">$</span><span class="break-all" style="color:#8b949e">${esc(pi.email)}</span></div>` : ''}
         ${pi.phone ? `<div class="flex items-start gap-2"><span style="color:${GREEN}">$</span><span style="color:#8b949e">${esc(pi.phone)}</span></div>` : ''}
+        ${pi.wechat ? `<div class="flex items-start gap-2"><span style="color:${GREEN}">$</span><span style="color:#8b949e">${esc(pi.wechat)}</span></div>` : ''}
         ${pi.location ? `<div class="flex items-start gap-2"><span style="color:${GREEN}">$</span><span style="color:#8b949e">${esc(pi.location)}</span></div>` : ''}
         ${pi.website ? `<div class="flex items-start gap-2"><span style="color:${GREEN}">$</span><span class="break-all" style="color:#8b949e">${esc(pi.website)}</span></div>` : ''}
         ${pi.github ? `<div class="flex items-start gap-2"><span style="color:${GREEN}">$</span><span class="break-all" style="color:#8b949e">${esc(pi.github)}</span></div>` : ''}

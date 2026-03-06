@@ -99,7 +99,7 @@ function buildMagazineSectionContent(section: Section, lang: string): string {
 export function buildMagazineHtml(resume: ResumeWithSections): string {
   const pi = getPersonalInfo(resume);
   const sections = visibleSections(resume);
-  const contacts = [pi.email, pi.phone, pi.location, pi.website, pi.linkedin, pi.github].filter(Boolean);
+  const contacts = [pi.age, pi.gender, pi.politicalStatus, pi.ethnicity, pi.hometown, pi.maritalStatus, pi.yearsOfExperience, pi.educationLevel, pi.email, pi.phone, pi.wechat, pi.location, pi.website, pi.linkedin, pi.github].filter(Boolean);
 
   return `<div class="mx-auto max-w-[210mm] bg-white shadow-lg" style="font-family:Georgia,serif">
     <div class="mb-6 border-b-2 pb-4" style="border-color:${ACCENT}">

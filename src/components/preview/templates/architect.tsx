@@ -47,8 +47,17 @@ export function ArchitectTemplate({ resume }: { resume: Resume }) {
           </div>
           <div className="shrink-0 border-l-2 pl-4 text-right" style={{ borderColor: ACCENT }}>
             <div className="space-y-0.5 text-xs" style={{ color: MUTED }}>
+              {pi.age && <p>{pi.age}</p>}
+              {pi.politicalStatus && <p>{pi.politicalStatus}</p>}
+              {pi.gender && <p>{pi.gender}</p>}
+              {pi.ethnicity && <p>{pi.ethnicity}</p>}
+              {pi.hometown && <p>{pi.hometown}</p>}
+              {pi.maritalStatus && <p>{pi.maritalStatus}</p>}
+              {pi.yearsOfExperience && <p>{pi.yearsOfExperience}</p>}
+              {pi.educationLevel && <p>{pi.educationLevel}</p>}
               {pi.email && <p>{pi.email}</p>}
               {pi.phone && <p>{pi.phone}</p>}
+              {pi.wechat && <p>{pi.wechat}</p>}
               {pi.location && <p>{pi.location}</p>}
               {pi.website && <p>{pi.website}</p>}
             </div>

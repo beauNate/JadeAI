@@ -27,7 +27,7 @@ export function NeonTemplate({ resume }: { resume: Resume }) {
   const personalInfo = resume.sections.find((s) => s.type === 'personal_info');
   const pi = (personalInfo?.content || {}) as PersonalInfoContent;
 
-  const contacts = [pi.email, pi.phone, pi.location, pi.website, pi.linkedin, pi.github].filter(Boolean);
+  const contacts = [pi.age, pi.politicalStatus, pi.gender, pi.ethnicity, pi.hometown, pi.maritalStatus, pi.yearsOfExperience, pi.educationLevel, pi.email, pi.phone, pi.wechat, pi.location, pi.website, pi.linkedin, pi.github].filter(Boolean);
 
   return (
     <div className="mx-auto max-w-[210mm] overflow-hidden shadow-lg" style={{ fontFamily: 'Inter, sans-serif', backgroundColor: BG }}>
